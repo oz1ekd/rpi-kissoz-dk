@@ -1,37 +1,47 @@
 # rpi-kissoz-dk
 Raspberry Pi distrubution with APRX for KissOZ HW v4 Digipeater &amp; iGate
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% make Kissoz RPI sd-card with Raspbian Jessie from scratch
 %% This is the description how the sd-card file from Kissoz.dk 
-%% If this file is in /boot/ then all the following has been done.
-%% although this setup is made for the Kissoz HW v4 the setup is usuable
-%% too all that use the GPIO serial port on a RPI both Rpi3 and ealier 
+%% If this file is in /boot/ then all the following has been
+%% done.
+%% although this setup is made for the Kissoz HW v4 the setup
+%% is usuable
+%% too all that use the GPIO serial port on a RPI both Rpi3 and
+%% ealier 
 %% without any changes.
-%% After installing and configuring the image was made and shrinked with the
-%% help of http://www.aoakley.com/articles/2015-10-09-resizing-sd-images.php
+%% After installing and configuring the image was made and
+%% shrinked with the
+%% help of http://www.aoakley.com/articles/2015-10-09-resizing
+%% sd-images.php
 %%
 %% OZ1EKD - Svend Stave December 2016
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% IMPORTANT! : Your iGate will not work if you do not add you own passcode 
 %%              in the aprx.conf file
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% On a windows PC:
 %% download and install putty.exe (you will need it)
 https://the.earth.li/~sgtatham/putty/latest/x86/putty-0.67-installer.msi
 
-%% download and install "win32diskimager" Shall be used to write the raspbian image to an sd-card
+%% download and install "win32diskimager" Shall be used to
+%% write the raspbian image to an sd-card
 https://sourceforge.net/projects/win32diskimager/?source=typ_redirect
 
-%% download the "raspbian jessie" package, the lite edition is just fine 
+%% download the "raspbian jessie" package, the lite edition is
+%% just fine 
 https://downloads.raspberrypi.org/raspbian_lite_latest
 
-%% use win32diskimager.exe to copy the disk image to the SD-card
+%% use win32diskimager.exe to copy the disk image to the SD
+%% card
 
-%% after writing the image to the sd-card make a file named "ssh" in the root directory - 
-%% this will make sure that SSH server is started, so you dont need to connect a screen and keyboard.
+%% after writing the image to the sd-card make a file named
+%% "ssh" in the root directory - 
+%% this will make sure that SSH server is started, so you dont
+%% need to connect a screen and keyboard.
 
 %% Insert the card in your RPI connect it to your LAN
 %% and power up.
@@ -42,11 +52,12 @@ https://downloads.raspberrypi.org/raspbian_lite_latest
 %% user: pi Password: raspberrypi
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% setup the Serial port for use with the KissOZ V4
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% change you RPI hostname from kissoz-digi to something else(if you want to):
+%% change you RPI hostname from kissoz-digi to something
+%% else(if you want to):
 sudo nano /etc/hostname 
 %% change the line:
 %% kissoz-digi
@@ -77,7 +88,8 @@ sudo systemctl stop serial-getty@ttyS0.service
 sudo systemctl disable serial-getty@ttyS0.service
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% in the file /boot/cmdline.txt remove "console=serial0,115200" the file 
+%% in the file /boot/cmdline.txt remove
+%% "console=serial0,115200" the file 
 sudo nano /boot/cmdline.txt
 %% change from
 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
@@ -97,7 +109,7 @@ sudo apt-get install screen
 %% install xmodem used to update the KissOZ HW
 sudo apt-get install lrzsz
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% get the aprx package, right now the latest is 2.9.0 and install it
 %% download http://thelifeofkenneth.com/aprx/debs/aprx_2.9.0_raspi.deb on the pi
 wget http://thelifeofkenneth.com/aprx/debs/aprx_2.9.0_raspi.deb
@@ -199,7 +211,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% add some helper scripts and files in /home/pi
 %% when logging in you automatically use /home/pi
 
