@@ -213,7 +213,7 @@ nano doscreen.sh
 ## when finished press CTRL-A k - and answer yes to stop the screen connection
 ## then start aprx again:
 ## sudo service aprx start
-sudo killall aprx
+sudo service aprx stop
 sudo screen /dev/serial0 115200
 echo "start aprx type:"
 echo "sudo service aprx start"
@@ -244,14 +244,16 @@ wget https://www.kissoz.dk/files/KissOZv4/KissozV4_KissOZHW4_$1.koz
 echo
 ## reset the KissOZ HW
 ./resetKissoz.sh
-sudo killall aprx
+sudo service aprx stop
 echo
 echo copy the exec line:
 echo :exec !! sx KissozV4_KissOZHW4_$1.koz
 echo
-echo startin: screen, when started
+echo starting: screen, when started
 echo press CTRL-a and paste the exec line
 echo "then type \"reset\" <enter> and \"load app\" <enter> to start upload"
+read -p "Press any key to continue... " -n1 -s
+./doscreen.sh
 
 
 ##
