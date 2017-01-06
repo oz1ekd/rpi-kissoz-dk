@@ -3,7 +3,6 @@
 ##############################################################################
 ## Get this file 
 wget https://github.com/oz1ekd/rpi-kissoz-dk/blob/master/Kissoz-install-info.txt
-chmod 755 resetKissoz.sh
 
 ##############################################################################
 ## add some helper scripts and files in /home/pi
