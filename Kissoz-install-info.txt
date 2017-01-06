@@ -204,6 +204,7 @@ alias l='ls -CF'
 ## add some helper scripts and files in /home/pi
 ## when logging in you automatically use /home/pi
 
+rm -f updateKissoz.sh
 wget https://raw.githubusercontent.com/oz1ekd/rpi-kissoz-dk/master/updateKissoz.sh
 chmod 755 doscreen.sh
 
