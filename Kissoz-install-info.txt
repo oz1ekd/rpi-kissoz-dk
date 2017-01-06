@@ -8,7 +8,8 @@
 ## After installing and configuring the image was made and shrinked with the
 ## help of http://www.aoakley.com/articles/2015-10-09-resizing-sd-images.php
 ##
-## OZ1EKD - Svend Stave December 2016
+## OZ1EKD - Svend Stave December 2016 - 
+## https://www.kissoz.dk/digi-igate/rpi-digipeater
 ##############################################################################
 
 ## IMPORTANT! : Your iGate will not work if you do not add you own callsign  
